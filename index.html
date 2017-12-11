@@ -1,0 +1,635 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Meet AdonisJS</title>
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/adonis.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <img src="img/badge.svg" width="300" alt="" style="background: none; box-shadow: none; border: none;">
+          <h1>Meet AdonisJS</h1>
+          <p>https://adonisjs.com</p>
+
+          <aside class="notes">
+            <p>Sleepy?</p>
+          </aside>
+        </section>
+
+        <section>
+          <section>
+            <h2>Hi! I'm Carlson</h2>
+          </section>
+
+          <section>
+            <h2>I'm a Developer</h2>
+            <h2 class="fragment current-visible">Full-Stack?</h2>
+            <h2 class="fragment current-visible">Half-Stack?</h2>
+          </section>
+
+          <section>
+            <img src="img/infinite-facepalm2.gif" alt="" style="background: none; box-shadow: none; border: none;">
+            <aside class="notes">
+              <p>Maybe Full-stack Overflow Developer</p>
+            </aside>
+          </section>
+
+          <section>
+            <h2>The out of stack Developer</h2>
+            <img class="fragment visible" src="img/full-stack-developer.png" alt="">
+          </section>
+
+          <section>
+            <h2>50% Backend Developer</h2>
+            <ul>
+              <li class="fragment visible">PHP</li>
+              <li class="fragment visible">Javascript</li>
+              <li class="fragment visible">Perl</li>
+              <li class="fragment visible">Bash</li>
+              <li class="fragment visible">MySQL</li>
+              <li class="fragment visible">Redis</li>
+              <li class="fragment visible">etc...</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2>30% DevOps</h2>
+            <ul>
+              <li class="fragment visible">AWS</li>
+              <li class="fragment visible">Google Cloud</li>
+              <li class="fragment visible">Nginx</li>
+              <li class="fragment visible">etc...</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2>15% Love Cats & Dogs</h2>
+            <img class="fragment visible" height="400px" src="img/cats.jpg" alt="">
+            <img class="fragment visible" height="400px" src="img/dogs.jpg" alt="">
+          </section>
+
+          <section>
+            <h2>5% Frontend Developer</h2>
+            <ul>
+              <li class="fragment visible">HTML5</li>
+              <li class="fragment visible">CSS3</li>
+              <li class="fragment visible">MV* Frontend Framework</li>
+              <li class="fragment visible">JQuery! Why not?</li>
+            </ul>
+          </section>
+        </section>
+
+        <section data-background="#194894">
+          <img class="reset_image" src="img/nyancat_git.gif" style="background: none; box-shadow: none; border: none;" alt="nyancat_git">
+          <h3>More about me: @carlsonorozco</h3>
+
+          <aside class="notes">
+            <p>You can find me on <strong>Github, Twitter, Instagram, Facebook and Linkedin.</strong></p>
+          </aside>
+        </section>
+
+        <section>
+          <section>
+            <h2>What is AdonisJS?</h2>
+            <img src="img/what-cat.gif" alt="" style="background: none; box-shadow: none; border: none;">
+          </section>
+
+          <section>
+            <img src="img/new_framework.jpg" alt="" style="background: none; box-shadow: none; border: none;">
+          </section>
+
+          <section>
+            <h2>AdonisJS</h2>
+            <p>Node.js web framework with a breath of fresh air and drizzle of elegant syntax on top of it.</p>
+
+            <aside class="notes">
+              <p>Mention about adonis-hashids and adonis-throttle-requests</p>
+            </aside>
+          </section>
+
+          <section>
+            <h2>WAF in other languages</h2>
+            <ul>
+              <li>Django - Python</li>
+              <li>Flask - Python</li>
+              <li>Ruby on Rails - Ruby</li>
+              <li>Sinatra - Ruby</li>
+              <li>Laravel - PHP</li>
+              <li>Codeigniter - PHP</li>
+              <li>Symfony - PHP</li>
+              <li>Mojolicious - Perl</li>
+              <li>Spring - Java</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2>What about JavaScript</h2>
+            <ul>
+              <li>ExpressJS</li>
+              <li>Total.js</li>
+              <li>Hapi.js</li>
+              <li>Meteor</li>
+              <li>Koa JS</li>
+              <li>Trails JS</li>
+            </ul>
+          </section>
+
+          <section>
+            <h3>MVC Pattern</h3>
+            <img height="500px" src="img/MVC-Flow-Chart.jpg" alt="">
+          </section>
+
+          <section data-markdown>
+            <script type="text/template">
+              ## Define a Model
+              ```
+                'use strict'
+
+                const Model = use('Model')
+
+                class User extends Model {
+
+                }
+
+                module.exports = User
+              ```
+            </script>
+          </section>
+
+          <section data-markdown>
+            <script type="text/template">
+              ## Using Model
+              ```
+                const User = use('App/Models/User')
+
+                // All Users
+                const users = await User.all()
+
+                // Using where clause
+                const activeUsers = await User.query()
+                  .where('status', 'active').fetch()
+              ```
+            </script>
+          </section>
+
+          <section data-markdown>
+            <script type="text/template">
+              ## Define a Controller
+              ```
+                'use strict'
+
+                class UserController {
+
+                }
+
+                module.exports = UserController
+              ```
+            </script>
+          </section>
+
+          <section data-markdown>
+            <script type="text/template">
+              ## Sample View
+              ```
+                @if(username)
+                  <h1> Hello {{ username }} </h1>
+                @else
+                  <h1> Hello anonymous </h1>
+                @endif
+              ```
+            </script>
+          </section>
+
+          <section>
+            <h3>Yet Another Web Application Framework</h3>
+            <img src="img/another-framework.gif" alt="" style="background: none; box-shadow: none; border: none;">
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>Directory Structure</h2>
+            <img src="img/directory_structure.gif" alt="" style="background: none; box-shadow: none; border: none;">
+          </section>
+
+          <section data-markdown>
+            <script type="text/template">
+              ## Slim structure
+              ```
+                .
+                ├── ace
+                ├── package.json
+                ├── public
+                ├── server.js
+                └── start
+                    ├── app.js
+                    ├── kernel.js
+                    └── routes.js
+              ```
+            </script>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>Framework concept and Features</h2>
+            <img src="img/features.gif" alt="" style="background: none; box-shadow: none; border: none;">
+          </section>
+
+          <section data-markdown>
+            <script type="text/template">
+              ## Basic Routing in Adonis
+              ```
+                const Route = use('Route')
+
+                Route.get('/', ({ view }) => {
+                  return view.render('home')
+                })
+              ```
+            </script>
+          </section>
+
+          <section data-markdown>
+            <script type="text/template">
+              ## Route Middleware
+              ```
+                const Route = use('Route')
+
+                Route.get('/profile', 'UserController.profile')
+                  .middleware(['auth'])
+              ```
+            </script>
+          </section>
+
+          <section>
+            <h2>More features</h2>
+            <ul>
+              <li>Authentications - Sessions, Basic Auth, JWT, and Personal API Tokens</li>
+              <li>File upload</li>
+              <li>ORM - Lucid</li>
+              <li>Template Engine - Edge</li>
+              <li>Migrations</li>
+              <li>Seeds & Factories</li>
+              <li>Validator</li>
+              <li>Encryption and Hashing</li>
+              <li>and more...</li>
+            </ul>
+          </section>
+        </section>
+
+        <section>
+          <h2>Demo</h2>
+          <img src="img/demo.gif" alt="" style="background: none; box-shadow: none; border: none;">
+
+          <aside class="notes">
+            <ul>
+              <li>
+                <p>Installation</p>
+                <ul>
+                  <li>Requirements</li>
+                  <li>node.js 8.0 or above</li>
+                  <li>NPM 3.0 or above</li>
+                  <li>CLI Tool npm i -g @adonisjs/cli</li>
+                  <li>adonis --help</li>
+                  <li>Explain each items</li>
+                </ul>
+              </li>
+
+              <li>
+                <p>Slim Folder structure</p>
+                <ul>
+                  <li>adonis new devday-slim --slim --skip-install</li>
+                  <li>cd devday-slim && tree</li>
+                </ul>
+              </li>
+
+              <li>
+                <p>Browser & Describe</p>
+                <ul>
+                  <li>adonis new devday</li>
+                  <li>cd devday && subl .</li>
+                  <li>Describe fullstack-app directory structure</li>
+                  <li>app/Models</li>
+                  <li>config</li>
+                  <li>database - migrations, seeds</li>
+                  <li>public</li>
+                  <li>resources/views/welcome.edge</li>
+                </ul>
+              </li>
+
+              <li>
+                <p>Create MVC Sample app</p>
+                <ul>
+                  <li>Visit start/routes.js</li>
+                  <li>
+                    <p>Add route</p>
+                    <p>Route.get('users', () => 'Users')</p>
+                  </li>
+                  <li>
+                    <p>Other variation</p>
+                    <p>
+                      Route.get('users', function () {
+                        return 'Users'
+                      })
+                    </p>
+                  </li>
+                </ul>
+              </li>
+
+              <li>
+                <p>Binding controllers</p>
+                <ul>
+                  <li>adonis make:controller Users</li>
+                  <li>Add route - Route.get('users', 'UserController.index')</li>
+                  <li>
+                    <p>Add function index</p>
+                    <p>
+                        index () {
+                          return 'Users from UserController.index'
+                        }
+                    </p>
+                  </li>
+                </ul>
+              </li>
+
+              <li>
+                <p>Create Users Template</p>
+                <ul>
+                  <li>adonis make:view users.index</li>
+                  <li>Add Header<pre>
+                    <h1>Users</h1>
+                  </pre></li>
+                  <li>Add table <pre>
+                    <table class="table">
+                      <thead>
+                        <tr>
+                          <th scope="col">#</th>
+                          <th scope="col">Email</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <th scope="row">1</th>
+                          <td>john.doe@example.com</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">2</th>
+                          <td>john.doe@example.com</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">3</th>
+                          <td>john.doe@example.com</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </pre></li>
+                  <li>Render from UserController.index</li>
+                  <li>
+                    index ({ view }) {
+                      return view.render('users.index')
+                    }
+                  </li>
+                  <li>Create some aesthetics</li>
+                </ul>
+              </li>
+
+              <li>
+                <p>Creating Master Template</p>
+                <ul>
+                  <li>adonis make:view master</li>
+                  <li>run html5 Boilerplate - html5</li>
+                  <li>Add title</li>
+                  <li>
+                    <p>Add Bootstrap CDN, JQuery - http://getbootstrap.com/</p>
+                    <p>{{ css('https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css') }}</p>
+                    <p>{{ script('https://code.jquery.com/jquery-3.2.1.slim.min.js') }}</p>
+                    <p>{{ script('https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js') }}</p>
+                    <p>{{ script('https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js') }}</p>
+                  </li>
+                  <li>
+                    <p>Add - @!section('content')</p>
+                    <pre>
+                        <div class="container">
+                          <div class="content">
+                            @!section('content')
+                          </div>
+                        </div>
+                    </pre>
+                  </li>
+                </ul>
+              </li>
+
+              <li>
+                <p>Use layout</p>
+                <ul>
+                  <li>Modify users.index template</li>
+                  <li>Add @layout('master')</li>
+                  <li>Encapsulate @section('content')</li>
+                  <li>Close @endsection</li>
+                </ul>
+              </li>
+
+              <li>
+                <p>Render Data from Controller</p>
+                <ul>
+                  <li>
+                    <pre>
+                      index ({ view }) {
+                        return view.render('users.index')
+                      }
+                    </pre>
+                  </li>
+                </ul>
+              </li>
+
+              <li>
+                <p>Passing Data from Controller to View</p>
+                <ul>
+                  <li>Create an array of users</li>
+                  <li>
+                    <pre>
+                      const users = [
+                        {
+                          id: 1,
+                          email: 'john.doe@example.com',
+                        },
+                        {
+                          id: 2,
+                          email: 'john.doe2@example.com',
+                        }
+                      ]
+                    </pre>
+                  </li>
+                  <li>
+                    <p>Pass to view</p>
+                    <pre>
+                      return view.render('users.index', {
+                        users: users
+                      })
+                    </pre>
+                  </li>
+                  <li>Modify users.index template</li>
+                  <li>
+                    <pre>
+                      @each(user in users)
+                        <tr>
+                          <th scope="row">{{ user.id }}</th>
+                          <td>{{ user.email }}</td>
+                        </tr>
+                      @endeach
+                    </pre>
+                  </li>
+                </ul>
+              </li>
+
+              <li>
+                <p>Seeders and Factories Data</p>
+                <ul>
+                  <li>npm install mysql</li>
+                  <li>Create Database devday</li>
+                  <li>Modify .env file</li>
+                  <li>Run database migration - adonis migration:run</li>
+                  <li>Modify database/factory.js</li>
+                  <li>Uncomment and Add</li>
+                  <li>
+                    <pre>
+                      const Factory = use('Factory')
+                      const Hash = use('Hash')
+
+                      Factory.blueprint('App/Models/User', (faker) => {
+                        return {
+                          username: faker.username(),
+                          email: faker.email(),
+                          password: Hash.make(faker.password()
+                        }
+                      })
+                    </pre>
+                  </li>
+                  <li>Create a seeder - adonis make:seed User</li>
+                  <li></li>
+                  <li>
+                    <p>Create a seeder</p>
+                    <p>Add run file - await Factory.model('App/Models/User').createMany(20)</p>
+                  </li>
+                </ul>
+              </li>
+
+              <li>
+                <p>Rendering Data from Model</p>
+                <ul>
+                  <li>const User = use('App/Models/User')</li>
+                  <li>
+                    <pre>
+                      async index ({ view }) {
+                        const users = await User.all()
+                        return view.render('users.index', {
+                          users: users.toJSON()
+                        })
+                      }
+                    </pre>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </aside>
+        </section>
+
+        <section>
+          <section>
+            <h2>Why AdonisJS</h2>
+            <img src="img/why.gif" alt="" style="background: none; box-shadow: none; border: none;">
+          </section>
+
+          <section>
+            <h3>1. Work on ideas, instead of deciding or downloading bunch of modules everytime.</h3>
+            <img src="img/why_1.gif" alt="" style="background: none; box-shadow: none; border: none;">
+          </section>
+
+          <section>
+            <h3>2. Hiring developers are easy as you and the one you are about to hire will be working on the same standards and conventions.</h3>
+            <img src="img/why_2.gif" alt="" style="background: none; box-shadow: none; border: none;">
+          </section>
+
+          <section>
+            <h3>3. The framework makes use of latest inbuilt ES2015 features to get rid of spaghetti code.</h3>
+            <img src="img/why_3.gif" alt="" style="background: none; box-shadow: none; border: none;">
+          </section>
+
+          <section>
+            <h3>4. AdonisJS ships with a bunch of 1st party components known as providers. Writing entire web server is a matter of weeks(if not days).</h3>
+            <img src="img/why_4.gif" alt="" style="background: none; box-shadow: none; border: none;">
+          </section>
+
+          <section>
+            <blockquote>
+              "Secret to productivity is not finding more time to do more stuff, but finding the strength to do less of the stuff that doesn’t need doing."
+              – David Heinemeier Hansson
+            </blockquote>
+          </section>
+        </section>
+
+        <section data-background-size="contain" data-background-video="img/questions.mp4" data-background-video-loop data-background-video-muted>
+          <h2>Questions?</h2>
+        </section>
+
+        <!-- So give it a try -->
+        <section>
+          <h2>Give it a try</h2>
+          <img src="img/hypnotize.gif" alt="" style="background: none; box-shadow: none; border: none;">
+        </section>
+
+        <!-- Resources -->
+        <section>
+          <h3>Awesome AdonisJS Resources</h2>
+          <ul>
+            <li><strong><a href="https://github.com/zgabievi/awesome-adonisjs" target="_new">awesome-adonis</a></strong> - A curated list of awesome resources from the AdonisJS ecosystem.</li>
+            <li><strong><a href="https://github.com/nuxt/adonuxt" target="_new">adonuxt</a></strong> - starter template for Nuxt.js with AdonisJS</li>
+            <li><strong><a href="https://github.com/adonisjs/discussion" target="_new">adonis/discussion</a></strong> - discussing about new features and sharing random thoughts.</li>
+            <li><strong><a href="https://gitter.im/adonisjs/adonis-framework" target="_new">AdonisJS at Gitter</a></strong></li>
+          </ul>
+        </section>
+
+        <!-- Philippine Community -->
+        <section>
+          <h2>Join us at AdonisJS Philippines</h2>
+          <a href="https://www.facebook.com/groups/adonisjs.philippines/" target="_new">https://fb.com/groups/adonisjs.philippines/</a>
+        </section>
+      </div>
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+
+    <script>
+      // More info about config & dependencies:
+      // - https://github.com/hakimel/reveal.js#configuration
+      // - https://github.com/hakimel/reveal.js#dependencies
+      Reveal.initialize({
+        dependencies: [
+          { src: 'plugin/markdown/marked.js' },
+          { src: 'plugin/markdown/markdown.js' },
+          { src: 'plugin/notes/notes.js', async: true },
+          { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+        ]
+      });
+    </script>
+  </body>
+</html>
